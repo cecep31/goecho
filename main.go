@@ -14,7 +14,7 @@ func main() {
 	// Middleware
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
-
+	Dbcon()
 	// Routes
 	e.GET("/", hello)
 	e.GET("/users/:id", getUser)
