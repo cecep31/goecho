@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 
+	"github.com/cecep31/goecho/controllers"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
@@ -18,6 +19,7 @@ func main() {
 	// Routes
 	e.GET("/", hello)
 	e.GET("/users/:id", getUser)
+	e.GET("/post", controllers.GetArtikel)
 
 	// Start server
 	e.Logger.Fatal(e.Start(":8080"))
