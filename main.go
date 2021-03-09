@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 
+	"github.com/cecep31/goecho/config"
 	"github.com/cecep31/goecho/controllers"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -15,7 +16,7 @@ func main() {
 	// Middleware
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
-	Dbcon()
+	config.Dbcon()
 	// Routes
 	e.GET("/", hello)
 	e.GET("/users/:id", getUser)
