@@ -25,8 +25,9 @@ func main() {
 	// Routes
 	e.GET("/", hello)
 	e.GET("/users/:id", getUser)
-	e.GET("/post", controllers.GetArtikel)
+	e.GET("/post", controllers.GetArtikels)
 	e.POST("/post", controllers.AddArtikel)
+	e.GET("/post/:id", controllers.GetArtikel)
 
 	// Start server
 	e.Logger.Fatal(e.Start(":8080"))
