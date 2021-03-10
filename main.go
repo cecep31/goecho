@@ -28,6 +28,8 @@ func main() {
 	e.GET("/post", controllers.GetArtikels)
 	e.POST("/post", controllers.AddArtikel)
 	e.GET("/post/:id", controllers.GetArtikel)
+	e.DELETE("/post/:id", controllers.DeleteArtikel)
+	e.PATCH("/post/:id", controllers.UpdateArtikel)
 
 	// Start server
 	e.Logger.Fatal(e.Start(":8080"))
