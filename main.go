@@ -32,7 +32,7 @@ func main() {
 	e.PATCH("/post/:id", controllers.UpdateArtikel)
 
 	// Start server
-	e.Logger.Fatal(e.Start(":8080"))
+	e.Logger.Fatal(e.Start(":3131"))
 }
 
 // Handler

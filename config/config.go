@@ -21,8 +21,10 @@ func Dbcon() *gorm.DB {
 	dbpass := os.Getenv("dbpass")
 	dbname := os.Getenv("dbname")
 	dbhost := os.Getenv("dbhost")
+	dbport := os.Getenv("dbport")
+
 	//connect database
-	dsn := fmt.Sprintf("%s:%s@tcp(%s:3306)/%s?charset=utf8mb4&parseTime=True&loc=Local", dbuser, dbpass, dbhost, dbname)
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", dbuser, dbpass, dbhost, dbport, dbname)
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
