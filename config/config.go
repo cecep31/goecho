@@ -22,10 +22,28 @@ func Dbcon() *gorm.DB {
 	dbname := os.Getenv("dbname")
 	dbhost := os.Getenv("dbhost")
 	dbport := os.Getenv("dbport")
+	database := os.Getenv("database")
+
+	var db *gorm.DB
+
+	if database == "mysql" {
+		dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", dbuser, dbpass, dbhost, dbport, dbname)
+		db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+
+		if err != nil {
+			panic("failed to connect database")
+		}
+		return db
+	} else if database == "postgresql" {
+		dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", dbuser, dbpass, dbhost, dbport, dbname)
+		db, err := gorm.Open(postgresql.Open(dsn), &gorm.Config{})
+		if err != nil {
+			panic("failed to connect database")
+		}
+		return db
 
 	//connect database
-	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", dbuser, dbpass, dbhost, dbport, dbname)
-	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+
 	if err != nil {
 		panic("failed to connect database")
 	}
