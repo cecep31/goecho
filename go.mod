@@ -4,7 +4,6 @@ go 1.16
 
 require (
 	github.com/jackc/pgproto3/v2 v2.0.7 // indirect
-	github.com/jackc/pgx/v4 v4.11.0 // indirect
 	github.com/joho/godotenv v1.3.0 // indirect
 	github.com/labstack/echo/v4 v4.2.1 // indirect
 	github.com/lib/pq v1.6.0 // indirect
