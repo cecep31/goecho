@@ -36,7 +36,8 @@ func Dbcon() *gorm.DB {
 		db.AutoMigrate(&models.Artikel{})
 		return db
 	} else if database == "postgresql" {
-		dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", dbuser, dbpass, dbhost, dbport, dbname)
+		dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable TimeZone=Asia/Jakarta",
+			dbhost, dbuser, dbpass, dbname, dbport)
 		db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 		if err != nil {
 			panic("failed to connect database")
@@ -44,7 +45,8 @@ func Dbcon() *gorm.DB {
 		db.AutoMigrate(&models.Artikel{})
 		return db
 	} else {
-		dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", dbuser, dbpass, dbhost, dbport, dbname)
+		dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable TimeZone=Asia/Jakarta",
+			dbhost, dbuser, dbpass, dbname, dbport)
 		db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 		if err != nil {
 			panic("failed to connect database")
