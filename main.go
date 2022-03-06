@@ -14,7 +14,9 @@ func main() {
 	e := echo.New()
 
 	// Middleware
-	e.Use(middleware.Logger())
+	e.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
+		Format: "method=${method}, uri=${uri},time=${time_rfc3339},latency=${latency} status=${status}\n",
+	}))
 	e.Use(middleware.Recover())
 
 	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
@@ -32,7 +34,7 @@ func main() {
 	e.PATCH("/post/:id", controllers.UpdateArtikel)
 
 	// Start server
-	e.Logger.Fatal(e.Start(":3131"))
+	e.Logger.Fatal(e.Start(":8080"))
 }
 
 // Handler
