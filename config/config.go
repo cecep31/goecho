@@ -23,7 +23,7 @@ func Dbcon() *gorm.DB {
 	dbhost := os.Getenv("dbhost")
 	dbport := os.Getenv("dbport")
 
-	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable TimeZone=Asia/Jakarta",
+	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=require TimeZone=Asia/Jakarta",
 		dbhost, dbuser, dbpass, dbname, dbport)
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {

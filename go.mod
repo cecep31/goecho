@@ -7,8 +7,8 @@ require (
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/jackc/pgproto3/v2 v2.2.0 // indirect
 	github.com/jcmturner/gokrb5/v8 v8.2.0 // indirect
-	github.com/joho/godotenv v1.4.0 // indirect
-	github.com/labstack/echo/v4 v4.7.0 // indirect
+	github.com/joho/godotenv v1.4.0
+	github.com/labstack/echo/v4 v4.7.0
 	github.com/lib/pq v1.10.4 // indirect
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
@@ -17,7 +17,7 @@ require (
 	gopkg.in/jcmturner/goidentity.v3 v3.0.0 // indirect
 	gopkg.in/jcmturner/gokrb5.v7 v7.5.0 // indirect
 	gopkg.in/jcmturner/rpc.v1 v1.1.0 // indirect
-	gorm.io/driver/postgres v1.3.1 // indirect
-	gorm.io/gorm v1.23.2 // indirect
+	gorm.io/driver/postgres v1.3.1
+	gorm.io/gorm v1.23.2
 
 )
