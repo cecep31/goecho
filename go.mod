@@ -3,10 +3,10 @@ module github.com/cecep31/goecho
 go 1.16
 
 require (
-	github.com/alexbrainman/sspi v0.0.0-20180613141037-e580b900e9f5 // indirect
+	github.com/alexbrainman/sspi v0.0.0-20210105120005-909beea2cc74 // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/jackc/pgproto3/v2 v2.2.0 // indirect
-	github.com/jcmturner/gokrb5/v8 v8.2.0 // indirect
+	github.com/jcmturner/gokrb5/v8 v8.4.2 // indirect
 	github.com/joho/godotenv v1.4.0
 	github.com/labstack/echo/v4 v4.7.0
 	github.com/lib/pq v1.10.4 // indirect
