@@ -1,10 +1,10 @@
-FROM golang:1.17.8-bullseye
+FROM golang:1.17-alpine
 
 WORKDIR /app    
 
 COPY . .
 
-COPY go get
+RUN go get 
 
 EXPOSE 8080
 
