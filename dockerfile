@@ -4,8 +4,10 @@ WORKDIR /app
 
 COPY . .
 
-RUN go get 
+RUN go get
+
+RUN go build -o bin
 
 EXPOSE 8080
 
-CMD make run
+CMD ./bin/goecho
