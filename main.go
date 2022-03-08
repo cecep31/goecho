@@ -5,11 +5,13 @@ import (
 
 	"github.com/cecep31/goecho/config"
 	"github.com/cecep31/goecho/controllers"
+	"github.com/cecep31/goecho/models"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
 
 func main() {
+	config.Dbcon().AutoMigrate(&models.Artikel{})
 	// Echo instance
 	e := echo.New()
 

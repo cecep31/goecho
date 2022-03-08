@@ -5,7 +5,6 @@ import (
 	"log"
 	"os"
 
-	"github.com/cecep31/goecho/models"
 	"github.com/joho/godotenv"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -29,7 +28,7 @@ func Dbcon() *gorm.DB {
 	if err != nil {
 		panic("failed to connect database")
 	}
-	db.AutoMigrate(&models.Artikel{})
+
 	return db
 
 }
