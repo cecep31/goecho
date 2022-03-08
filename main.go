@@ -17,11 +17,10 @@ func main() {
 
 	// Middleware
 	e.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
-		Format: `{"time":"${time_rfc3339}",` +
-			`"host":"${host}","method":"${method}","uri":"${uri}","user_agent":"${user_agent}",` +
-			`"status":${status},"error":"${error}","latency":${latency}` +
+		Format: `${time_rfc3339},` +
+			`"${method}","uri":"${uri}"` +
+			`|${status},"latency":${latency}|${error}` +
 			"\n",
-		CustomTimeFormat: "2006-01-02 15:04:05.00000",
 	}))
 	e.Use(middleware.Recover())
 
